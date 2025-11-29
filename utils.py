@@ -3,6 +3,12 @@ from nltk.corpus import stopwords
 import math
 import re
 import os
+import nltk
+
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
+nltk.download('averaged_perceptron_tagger', quiet=True)
+nltk.download('wordnet', quiet=True)
 
 # Add project nltk_data to path
 proj_nltk = os.path.join(os.path.dirname(__file__), '.venv', 'nltk_data')
@@ -93,3 +99,4 @@ def make_flashcards(text, num=10):
         answer = sent
         flash.append({"q": question, "a": answer})
     return flash
+
